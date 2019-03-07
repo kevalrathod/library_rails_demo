@@ -1,5 +1,6 @@
 <h1>Showing the Result of Save Article.</h1>
 
+<!-- adding article section -->
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -10,6 +11,13 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
-<%= link_to 'Edit', edit_article_path(@article) %> 
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_article_path(@article) %>
 
 <%= link_to 'Back', articles_path %>
